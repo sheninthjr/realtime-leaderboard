@@ -9,11 +9,11 @@ interface Player {
 
 export const players: Record<number,Player> = {
     1 : {
-        player: "Sam",
+        player: "Revanth",
         score: 0
     },
     2: {
-        player: 'Robert',
+        player: 'Harsha',
         score: 0
     },
     3: {
@@ -21,7 +21,7 @@ export const players: Record<number,Player> = {
         score: 0
     },
     4: {
-        player: "IronMan",
+        player: "Michael",
         score: 0
     },
     5: {
@@ -31,12 +31,26 @@ export const players: Record<number,Player> = {
     6: {
         player: "Dravid",
         score: 0
+    },
+    7: {
+        player: "Monesh",
+        score: 0
+    }
+    ,
+    8: {
+        player: "Hari",
+        score: 0
+    }
+    ,
+    9: {
+        player: "Ferin",
+        score: 0
     }
 }
 
 async function main() {
     setInterval(async() => {
-        const randomIndex = Math.floor(Math.random() * 6) + 1
+        const randomIndex = Math.floor(Math.random() * 9) + 1
         const res = await axios.post(`${BACKEND_URL}/score`, {
             player: players[randomIndex].player,
             score: Math.floor(Math.random() * 10)

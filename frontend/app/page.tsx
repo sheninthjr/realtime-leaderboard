@@ -21,18 +21,18 @@ export default function Home() {
       } catch (error) {
         console.error("Error fetching leaderboard:", error);
       }
-    }, 1000);
+    }, 500);
 
     return () => clearInterval(intervalId);
   }, []);
 
   return (
-    <div className="max-w-6xl pt-32 flex justify-center mx-auto">
+    <div className="max-w-6xl pt-32 flex justify-center w-full mx-auto">
       <div>
-        <div className="font-extrabold text-3xl">Realtime Leaderboard</div>
-        <div className="bg-slate-700 h-[60vh] rounded-xl mt-10 overflow-y-auto">
+        <div className="font-extrabold text-3xl flex justify-center self-center">Realtime Leaderboard</div>
+        <div className="bg-neutral-700 h-fit border flex flex-col w-[800px] rounded-xl mt-10 overflow-y-auto">
           {leaderBoard.map((value, index) => (
-            <div key={index} className="border-b p-4 flex justify-between">
+            <div key={index} className="border-b border-slate-300 p-4 flex justify-between">
               <div>{value.value}</div>
               <div>Score: {value.score}</div>
             </div>
